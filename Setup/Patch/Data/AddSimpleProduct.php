@@ -1,8 +1,8 @@
 <?php
 /**
- * @category    Example
- * @package     Scandiweb_Test
- * @author      Ralfs Aizsils <info@scandiweb.com>
+ * @category    Scandiweb
+ * @package     Scandiweb\Test
+ * @author      Nathani Luvinga <info@scandiweb.com>
  * @copyright   Copyright (c) 2021 Scandiweb, Ltd (https://scandiweb.com)
  */
 
@@ -82,7 +82,7 @@ class AddSimpleProduct implements DataPatchInterface
      * @param SourceItemsSaveInterface $sourceItemsSaveInterface
      * @param State $appState
      * @param StoreManagerInterface $storeManager
-		 * @param EavSetup $eavSetup
+     * @param EavSetup $eavSetup
      * @param CategoryLinkManagementInterface $categoryLink
      */
     public function __construct(
@@ -91,18 +91,18 @@ class AddSimpleProduct implements DataPatchInterface
         State $appState,
         StoreManagerInterface $storeManager,
         EavSetup $eavSetup,
-				SourceItemInterfaceFactory $sourceItemFactory,
+        SourceItemInterfaceFactory $sourceItemFactory,
         SourceItemsSaveInterface $sourceItemsSaveInterface,
-				CategoryLinkManagementInterface $categoryLink
+        CategoryLinkManagementInterface $categoryLink
     ) {
         $this->appState = $appState;
         $this->productInterfaceFactory = $productInterfaceFactory;
         $this->productRepository = $productRepository;
-				$this->eavSetup = $eavSetup;
+        $this->eavSetup = $eavSetup;
         $this->storeManager = $storeManager;
         $this->sourceItemFactory = $sourceItemFactory;
         $this->sourceItemsSaveInterface = $sourceItemsSaveInterface;
-				$this->categoryLink = $categoryLink;
+        $this->categoryLink = $categoryLink;
     }
 
     /**
@@ -130,11 +130,11 @@ class AddSimpleProduct implements DataPatchInterface
 
         $attributeSetId = $this->eavSetup->getAttributeSetId(Product::ENTITY, 'Default');
         $websiteIDs = [$this->storeManager->getStore()->getWebsiteId()];
-				$product->setTypeId(Type::TYPE_SIMPLE)
+        $product->setTypeId(Type::TYPE_SIMPLE)
             ->setWebsiteIds($websiteIDs)
             ->setAttributeSetId($attributeSetId)
             ->setName('Simple Product')
-						->setUrlKey('simpleproduct')
+            ->setUrlKey('simpleproduct')
             ->setSku('simple-product')
             ->setPrice(9.99)
             ->setVisibility(Visibility::VISIBILITY_BOTH)
@@ -150,8 +150,7 @@ class AddSimpleProduct implements DataPatchInterface
         $this->sourceItems[] = $sourceItem;
 
         $this->sourceItemsSaveInterface->execute($this->sourceItems);
-
-				$this->categoryLink->assignProductToCategories($product->getSku(), [2]);
+        $this->categoryLink->assignProductToCategories($product->getSku(), [2]);
     }
 
     /**
