@@ -6,7 +6,7 @@
  * @copyright   Copyright (c) 2021 Scandiweb, Ltd (https://scandiweb.com)
  */
 
-namespace Example\Migration\Setup\Patch\Data;
+namespace Scandiweb\Test\Setup\Patch\Data;
 
 use Magento\Catalog\Api\CategoryLinkManagementInterface;
 use Magento\Catalog\Api\Data\ProductInterfaceFactory;
@@ -31,7 +31,7 @@ use Magento\Store\Model\StoreManagerInterface;
 /**
  * Create Migration product class
  */
-class CreateGripTrainerProduct implements DataPatchInterface
+class AddSimpleProduct implements DataPatchInterface
 {
     /**
      * @var ProductInterfaceFactory
