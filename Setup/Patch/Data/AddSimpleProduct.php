@@ -70,6 +70,11 @@ class AddSimpleProduct implements DataPatchInterface
     protected EavSetup $eavSetup;
 
     /**
+     * @var CategoryLinkManagementInterface
+     */
+    protected CategoryLinkManagementInterface $categoryLink;
+
+    /**
      * @var array
      */
     protected array $sourceItems = [];
