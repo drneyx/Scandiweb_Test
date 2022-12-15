@@ -2,8 +2,9 @@
 /**
  * @category    Scandiweb
  * @package     Scandiweb\Test
- * @author      Nathani Luvinga <info@scandiweb.com>
- * @copyright   Copyright (c) 2021 Scandiweb, Ltd (https://scandiweb.com)
+ * @author      Nathani Luvinga <nathani.luvinga@scandiweb.com>
+ * @copyright   Copyright (c) 2022 Scandiweb, Inc (https://scandiweb.com)
+ * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
  */
 
 namespace Scandiweb\Test\Setup\Patch\Data;
